@@ -40,7 +40,7 @@
       "name": "Artifacts",
       "item": [
         {
-          "name": "locate",
+          "name": "Get download URL for artifact",
           "request": {
             "description": "Gets the download URL for the artifact.",
             "url": {
@@ -73,7 +73,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "prepare",
+          "name": "Create an artifact and generate upload URL",
           "request": {
             "description": "Creates an artifact and generates an upload URL for its data.\n",
             "url": {
@@ -115,7 +115,7 @@
       "name": "Auth Connection",
       "item": [
         {
-          "name": "create",
+          "name": "Create new authentication connection",
           "request": {
             "description": "Creates a new enterprise authentication connection for a Dev\norganization. This authentication connection will not be enabled by\ndefault for the organization and the user will need to explicitly\nenable this. Keep in mind that at a time, only one authentication\nconnection can be enabled for a Dev organization. At present, only 5\nenterprise connections can be created by an organization.\n",
             "url": {
@@ -151,7 +151,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "delete",
+          "name": "Delete authentication connection",
           "request": {
             "description": "Deletes an authentication connection. Only enterprise connections which\nare explicitly set up for a Dev organization can be deleted. Default\nconnections can not be deleted using this method.\n",
             "url": {
@@ -187,7 +187,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "get",
+          "name": "Retrieve details for an authentication connection",
           "request": {
             "description": "Retrieves the details for an authentication connection.",
             "url": {
@@ -220,7 +220,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "list",
+          "name": "List authentication connections",
           "request": {
             "description": "Lists all the authentication connections available for a Dev\norganization. This list will include both social and enterprise\nconnections which are either available by default or are explicitly\ncreated by the user.\n",
             "url": {
@@ -247,7 +247,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "toggle",
+          "name": "Enable or disable authentication connection",
           "request": {
             "description": "Enable or disable an authentication connection for a Dev organization.\nCurrently, only 1 authentication connection can be enabled at a time.\nWhen a new authentication connection is enabled, the connection which\nis currently enabled for the Dev organization is automatically\ndisabled.\n",
             "url": {
@@ -283,7 +283,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "update",
+          "name": "Update authentication connection",
           "request": {
             "description": "Updates an authentication connection.",
             "url": {
@@ -325,7 +325,7 @@
       "name": "Auth Tokens",
       "item": [
         {
-          "name": "create",
+          "name": "Create a JWT token",
           "request": {
             "description": "Creates a JWT corresponding to the requested token type for the\nauthenticated user.\n",
             "url": {
@@ -361,7 +361,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "delete",
+          "name": "Revoke a token under Dev org",
           "request": {
             "description": "Revokes the token that matches the given token ID issued under the\ngiven Dev organization.\n",
             "url": {
@@ -397,7 +397,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "get",
+          "name": "Get token metadata",
           "request": {
             "description": "Gets the token metadata corresponding to the given token ID under the\ngiven Dev organization.\n",
             "url": {
@@ -430,7 +430,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "list",
+          "name": "List token metadeta for all tokens of token type",
           "request": {
             "description": "Gets the token metadata for all the tokens corresponding to the given\ntoken type issued for a given subject.\n",
             "url": {
@@ -473,7 +473,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "selfDelete",
+          "name": "Delete token created by user",
           "request": {
             "description": "Revokes all the tokens that matches the given token type created by the\nauthenticated user.\n",
             "url": {
@@ -509,7 +509,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "update",
+          "name": "Update token metadeta",
           "request": {
             "description": "Updates token metadata of a token issued under a given Dev\norganization.\n",
             "url": {
@@ -551,7 +551,7 @@
       "name": "Dev Users",
       "item": [
         {
-          "name": "list",
+          "name": "List users in organization",
           "request": {
             "description": "Lists users within your organization.",
             "url": {
@@ -594,7 +594,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "self",
+          "name": "Get authenticated user's information",
           "request": {
             "description": "Gets the authenticated user's information.",
             "url": {
@@ -627,7 +627,7 @@
       "name": "Parts",
       "item": [
         {
-          "name": "create",
+          "name": "Create new part",
           "request": {
             "description": "Creates new [part](https://devrev.ai/docs/product/parts).",
             "url": {
@@ -663,7 +663,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "delete",
+          "name": "Delete new part",
           "request": {
             "description": "Deletes a [part](https://devrev.ai/docs/product/parts).",
             "url": {
@@ -699,7 +699,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "get",
+          "name": "Get a part",
           "request": {
             "description": "Gets a [part's](https://devrev.ai/docs/product/parts) information.\n",
             "url": {
@@ -732,7 +732,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "list",
+          "name": "Lists collection of parts",
           "request": {
             "description": "Lists a collection of [parts](https://devrev.ai/docs/product/parts).\n",
             "url": {
@@ -775,7 +775,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "update",
+          "name": "Update a part",
           "request": {
             "description": "Updates a [part's](https://devrev.ai/docs/product/parts) information.\n",
             "url": {
@@ -817,7 +817,7 @@
       "name": "Rev Orgs",
       "item": [
         {
-          "name": "create",
+          "name": "Create Rev organization",
           "request": {
             "description": "Creates a Rev organization in the authenticated user's Dev\norganization.\n",
             "url": {
@@ -853,7 +853,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "delete",
+          "name": "Delete Rev organization",
           "request": {
             "description": "Deletes the Rev organization.",
             "url": {
@@ -889,7 +889,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "get",
+          "name": "Get Rev organization information",
           "request": {
             "description": "Retrieves the Rev organization's information.",
             "url": {
@@ -922,7 +922,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "list",
+          "name": "Get list of Rev organizations' information",
           "request": {
             "description": "Gets the list of Rev organizations' information belonging to the\nauthenticated user's Dev Organization which the user is also authorized\nto access.\n",
             "url": {
@@ -985,7 +985,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "update",
+          "name": "Update the Rev organization's information.",
           "request": {
             "description": "Updates the Rev organization's information.",
             "url": {
@@ -1027,7 +1027,7 @@
       "name": "Tags",
       "item": [
         {
-          "name": "create",
+          "name": "Create new tag",
           "request": {
             "description": "Creates a new tag, which is used to create associations between objects\nand a logical concept denoted by the tag's name.\n",
             "url": {
@@ -1063,7 +1063,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "delete",
+          "name": "Delete a tag",
           "request": {
             "description": "Deletes a tag.",
             "url": {
@@ -1099,7 +1099,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "get",
+          "name": "Get a tag",
           "request": {
             "description": "Gets a tag's information.",
             "url": {
@@ -1132,7 +1132,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "list",
+          "name": "List all available tags",
           "request": {
             "description": "Lists the available tags.",
             "url": {
@@ -1175,7 +1175,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "update",
+          "name": "Update a tag",
           "request": {
             "description": "Updates a tag's information.",
             "url": {
@@ -1217,7 +1217,7 @@
       "name": "Timeline Entries",
       "item": [
         {
-          "name": "create",
+          "name": "Create new entry on timeline",
           "request": {
             "description": "Creates a new entry on an object's timeline.",
             "url": {
@@ -1253,9 +1253,9 @@
           "_type": "endpoint"
         },
         {
-          "name": "get",
+          "name": "Get an entry on timeline",
           "request": {
-            "description": "Gets an entry on an object's timeline.",
+            "description": "Gets an entry on timeline.",
             "url": {
               "raw": "{{baseUrl}}/timeline-entries.get?id=",
               "host": [
@@ -1286,7 +1286,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "list",
+          "name": "List timeline entries",
           "request": {
             "description": "Lists the timeline entries for an object.",
             "url": {
@@ -1334,7 +1334,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "update",
+          "name": "Update timeline entry",
           "request": {
             "description": "Updates an entry on an object's timeline.",
             "url": {
@@ -1376,7 +1376,7 @@
       "name": "Webhooks",
       "item": [
         {
-          "name": "create",
+          "name": "Create new webhook target",
           "request": {
             "description": "Creates a new webhook target.",
             "url": {
@@ -1412,7 +1412,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "delete",
+          "name": "Delete webhook",
           "request": {
             "description": "Deletes the requested webhook.",
             "url": {
@@ -1448,7 +1448,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "get",
+          "name": "Get webhook information",
           "request": {
             "description": "Gets the requested webhook's information.",
             "url": {
@@ -1481,7 +1481,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "list",
+          "name": "List webhooks",
           "request": {
             "description": "Lists the webhooks.",
             "url": {
@@ -1508,7 +1508,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "update",
+          "name": "Update webhook",
           "request": {
             "description": "Updates the requested webhook.",
             "url": {
@@ -1550,7 +1550,7 @@
       "name": "Works",
       "item": [
         {
-          "name": "create",
+          "name": "Create new work item",
           "request": {
             "description": "Creates new work ([issue](https://devrev.ai/docs/product/build),\n[ticket](https://devrev.ai/docs/product/support)) item.\n",
             "url": {
@@ -1586,7 +1586,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "delete",
+          "name": "Delete work item",
           "request": {
             "description": "Deletes a work item.",
             "url": {
@@ -1622,7 +1622,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "export",
+          "name": "Export collection of work items",
           "request": {
             "description": "Exports a collection of work items.",
             "url": {
@@ -1665,7 +1665,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "get",
+          "name": "Get work item",
           "request": {
             "description": "Gets a work item's information.",
             "url": {
@@ -1698,7 +1698,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "list",
+          "name": "List collection of work items",
           "request": {
             "description": "Lists a collection of work items.",
             "url": {
@@ -1751,7 +1751,7 @@
           "_type": "endpoint"
         },
         {
-          "name": "update",
+          "name": "Update work item",
           "request": {
             "description": "Updates a work item's information.",
             "url": {
