@@ -1,0 +1,1793 @@
+{
+  "info": {
+    "name": "DevRev API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "authorization",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "auth": {
+    "apikey": [
+      {
+        "key": "value",
+        "value": "{{authorization}}",
+        "type": "string"
+      },
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ],
+    "type": "apikey"
+  },
+  "item": [
+    {
+      "name": "Artifacts",
+      "item": [
+        {
+          "name": "locate",
+          "request": {
+            "description": "Gets the download URL for the artifact.",
+            "url": {
+              "raw": "{{baseUrl}}/artifacts.locate?id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artifacts.locate"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "",
+                  "description": "The ID of the artifact to get the URL for."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "prepare",
+          "request": {
+            "description": "Creates an artifact and generates an upload URL for its data.\n",
+            "url": {
+              "raw": "{{baseUrl}}/artifacts.prepare",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artifacts.prepare"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"file_name\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Auth Connection",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "description": "Creates a new enterprise authentication connection for a Dev\norganization. This authentication connection will not be enabled by\ndefault for the organization and the user will need to explicitly\nenable this. Keep in mind that at a time, only one authentication\nconnection can be enabled for a Dev organization. At present, only 5\nenterprise connections can be created by an organization.\n",
+            "url": {
+              "raw": "{{baseUrl}}/dev-orgs.auth-connections.create",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dev-orgs.auth-connections.create"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"display_name\": \"example\",\n    \"type\": \"google_apps\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "delete",
+          "request": {
+            "description": "Deletes an authentication connection. Only enterprise connections which\nare explicitly set up for a Dev organization can be deleted. Default\nconnections can not be deleted using this method.\n",
+            "url": {
+              "raw": "{{baseUrl}}/dev-orgs.auth-connections.delete",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dev-orgs.auth-connections.delete"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "get",
+          "request": {
+            "description": "Retrieves the details for an authentication connection.",
+            "url": {
+              "raw": "{{baseUrl}}/dev-orgs.auth-connections.get?id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dev-orgs.auth-connections.get"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "",
+                  "description": "ID of the authentication connection."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "list",
+          "request": {
+            "description": "Lists all the authentication connections available for a Dev\norganization. This list will include both social and enterprise\nconnections which are either available by default or are explicitly\ncreated by the user.\n",
+            "url": {
+              "raw": "{{baseUrl}}/dev-orgs.auth-connections.list",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dev-orgs.auth-connections.list"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "toggle",
+          "request": {
+            "description": "Enable or disable an authentication connection for a Dev organization.\nCurrently, only 1 authentication connection can be enabled at a time.\nWhen a new authentication connection is enabled, the connection which\nis currently enabled for the Dev organization is automatically\ndisabled.\n",
+            "url": {
+              "raw": "{{baseUrl}}/dev-orgs.auth-connections.toggle",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dev-orgs.auth-connections.toggle"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"example\",\n    \"toggle\": \"disable\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "update",
+          "request": {
+            "description": "Updates an authentication connection.",
+            "url": {
+              "raw": "{{baseUrl}}/dev-orgs.auth-connections.update",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dev-orgs.auth-connections.update"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"display_name\": \"example\",\n    \"id\": \"example\",\n    \"type\": \"google_apps\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Auth Tokens",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "description": "Creates a JWT corresponding to the requested token type for the\nauthenticated user.\n",
+            "url": {
+              "raw": "{{baseUrl}}/auth-tokens.create",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth-tokens.create"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"aud\": [\n        \"example\"\n    ],\n    \"client_id\": \"example\",\n    \"expires_in\": 0,\n    \"grant_type\": \"urn:devrev:params:oauth:grant-type:token-issue\",\n    \"requested_token_type\": \"urn:devrev:params:oauth:token-type:aat\",\n    \"rev_info\": {\n        \"org_ref\": \"example\",\n        \"org_traits\": {\n            \"display_name\": \"example\",\n            \"domain\": \"example\"\n        },\n        \"user_ref\": \"example\",\n        \"user_traits\": {\n            \"display_name\": \"example\",\n            \"email\": \"example\",\n            \"full_name\": \"example\"\n        }\n    },\n    \"scope\": \"example\",\n    \"subject_token\": \"example\",\n    \"subject_token_type\": \"urn:devrev:params:oauth:token-type:jwt:auth0\",\n    \"token_hint\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "delete",
+          "request": {
+            "description": "Revokes the token that matches the given token ID issued under the\ngiven Dev organization.\n",
+            "url": {
+              "raw": "{{baseUrl}}/auth-tokens.delete",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth-tokens.delete"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"token_id\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "get",
+          "request": {
+            "description": "Gets the token metadata corresponding to the given token ID under the\ngiven Dev organization.\n",
+            "url": {
+              "raw": "{{baseUrl}}/auth-tokens.get?token_id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth-tokens.get"
+              ],
+              "query": [
+                {
+                  "key": "token_id",
+                  "value": "",
+                  "description": "The unique identifier of the token under a given Dev organization.\n"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "list",
+          "request": {
+            "description": "Gets the token metadata for all the tokens corresponding to the given\ntoken type issued for a given subject.\n",
+            "url": {
+              "raw": "{{baseUrl}}/auth-tokens.list?client_id=&requested_token_type=&subject=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth-tokens.list"
+              ],
+              "query": [
+                {
+                  "key": "client_id",
+                  "value": "",
+                  "description": "An identifier that represents the application, which requested the\ntoken. Only relevant for application access tokens.\n"
+                },
+                {
+                  "key": "requested_token_type",
+                  "value": "",
+                  "description": "The type of the requested token. If no value is specified, the\nresponse will include tokens of all the types.\n"
+                },
+                {
+                  "key": "subject",
+                  "value": "",
+                  "description": "The subject associated with the token. In the absence of this\nparameter, the ID of the authenticated entity is treated as the\nsubject.\n"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "selfDelete",
+          "request": {
+            "description": "Revokes all the tokens that matches the given token type created by the\nauthenticated user.\n",
+            "url": {
+              "raw": "{{baseUrl}}/auth-tokens.self.delete",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth-tokens.self.delete"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"requested_token_type\": \"urn:devrev:params:oauth:token-type:aat\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "update",
+          "request": {
+            "description": "Updates token metadata of a token issued under a given Dev\norganization.\n",
+            "url": {
+              "raw": "{{baseUrl}}/auth-tokens.update",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth-tokens.update"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"token_hint\": \"example\",\n    \"token_id\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Dev Users",
+      "item": [
+        {
+          "name": "list",
+          "request": {
+            "description": "Lists users within your organization.",
+            "url": {
+              "raw": "{{baseUrl}}/dev-users.list?cursor=&limit=&mode=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dev-users.list"
+              ],
+              "query": [
+                {
+                  "key": "cursor",
+                  "value": "",
+                  "description": "The cursor to resume iteration from. If not provided, then iteration starts from the beginning.\n"
+                },
+                {
+                  "key": "limit",
+                  "value": "",
+                  "description": "The maximum number of Dev users to return. The default is '50'.\n"
+                },
+                {
+                  "key": "mode",
+                  "value": "",
+                  "description": "The iteration mode to use, otherwise if not set, then \"after\" is\nused.\n"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "self",
+          "request": {
+            "description": "Gets the authenticated user's information.",
+            "url": {
+              "raw": "{{baseUrl}}/dev-users.self",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dev-users.self"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Parts",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "description": "Creates new [part](https://devrev.ai/docs/product/parts).",
+            "url": {
+              "raw": "{{baseUrl}}/parts.create",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "parts.create"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"description\": \"example\",\n    \"name\": \"example\",\n    \"owned_by\": [\n        \"example\"\n    ],\n    \"type\": \"product\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "delete",
+          "request": {
+            "description": "Deletes a [part](https://devrev.ai/docs/product/parts).",
+            "url": {
+              "raw": "{{baseUrl}}/parts.delete",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "parts.delete"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "get",
+          "request": {
+            "description": "Gets a [part's](https://devrev.ai/docs/product/parts) information.\n",
+            "url": {
+              "raw": "{{baseUrl}}/parts.get?id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "parts.get"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "",
+                  "description": "The ID of the part to retrieve."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "list",
+          "request": {
+            "description": "Lists a collection of [parts](https://devrev.ai/docs/product/parts).\n",
+            "url": {
+              "raw": "{{baseUrl}}/parts.list?cursor=&limit=&mode=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "parts.list"
+              ],
+              "query": [
+                {
+                  "key": "cursor",
+                  "value": "",
+                  "description": "The cursor to resume iteration from. If not provided, then iteration starts from the beginning.\n"
+                },
+                {
+                  "key": "limit",
+                  "value": "",
+                  "description": "The maximum number of parts to return. The default is '50'.\n"
+                },
+                {
+                  "key": "mode",
+                  "value": "",
+                  "description": "The iteration mode to use, otherwise if not set, then \"after\" is\nused.\n"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "update",
+          "request": {
+            "description": "Updates a [part's](https://devrev.ai/docs/product/parts) information.\n",
+            "url": {
+              "raw": "{{baseUrl}}/parts.update",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "parts.update"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"description\": \"example\",\n    \"id\": \"example\",\n    \"name\": \"example\",\n    \"type\": \"product\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Rev Orgs",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "description": "Creates a Rev organization in the authenticated user's Dev\norganization.\n",
+            "url": {
+              "raw": "{{baseUrl}}/rev-orgs.create",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rev-orgs.create"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"description\": \"example\",\n    \"display_name\": \"example\",\n    \"domain\": \"example\",\n    \"environment\": \"production\",\n    \"external_ref\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "delete",
+          "request": {
+            "description": "Deletes the Rev organization.",
+            "url": {
+              "raw": "{{baseUrl}}/rev-orgs.delete",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rev-orgs.delete"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "get",
+          "request": {
+            "description": "Retrieves the Rev organization's information.",
+            "url": {
+              "raw": "{{baseUrl}}/rev-orgs.get?id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rev-orgs.get"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "",
+                  "description": "The ID of the required Rev organization."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "list",
+          "request": {
+            "description": "Gets the list of Rev organizations' information belonging to the\nauthenticated user's Dev Organization which the user is also authorized\nto access.\n",
+            "url": {
+              "raw": "{{baseUrl}}/rev-orgs.list?created_date.after=&created_date.before=&cursor=&limit=&mode=&modified_date.after=&modified_date.before=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rev-orgs.list"
+              ],
+              "query": [
+                {
+                  "key": "created_date.after",
+                  "value": "",
+                  "description": "Filters for objects created after the provided timestamp (inclusive).\n"
+                },
+                {
+                  "key": "created_date.before",
+                  "value": "",
+                  "description": "Filters for objects created before the provided timestamp\n(inclusive).\n"
+                },
+                {
+                  "key": "cursor",
+                  "value": "",
+                  "description": "The cursor to resume iteration from. If not provided, then iteration starts from the beginning.\n"
+                },
+                {
+                  "key": "limit",
+                  "value": "",
+                  "description": "The maximum number of Rev organizations to be retrieved per page.\n"
+                },
+                {
+                  "key": "mode",
+                  "value": "",
+                  "description": "The iteration mode to use, otherwise if not set, then \"after\" is\nused.\n"
+                },
+                {
+                  "key": "modified_date.after",
+                  "value": "",
+                  "description": "Filters for objects created after the provided timestamp (inclusive).\n"
+                },
+                {
+                  "key": "modified_date.before",
+                  "value": "",
+                  "description": "Filters for objects created before the provided timestamp\n(inclusive).\n"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "update",
+          "request": {
+            "description": "Updates the Rev organization's information.",
+            "url": {
+              "raw": "{{baseUrl}}/rev-orgs.update",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "rev-orgs.update"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"description\": \"example\",\n    \"display_name\": \"example\",\n    \"domain\": \"example\",\n    \"environment\": \"production\",\n    \"external_ref\": \"example\",\n    \"id\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Tags",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "description": "Creates a new tag, which is used to create associations between objects\nand a logical concept denoted by the tag's name.\n",
+            "url": {
+              "raw": "{{baseUrl}}/tags.create",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "tags.create"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"allowed_values\": [\n        \"example\"\n    ],\n    \"description\": \"example\",\n    \"name\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "delete",
+          "request": {
+            "description": "Deletes a tag.",
+            "url": {
+              "raw": "{{baseUrl}}/tags.delete",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "tags.delete"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "get",
+          "request": {
+            "description": "Gets a tag's information.",
+            "url": {
+              "raw": "{{baseUrl}}/tags.get?id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "tags.get"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "",
+                  "description": "The requested tag's ID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "list",
+          "request": {
+            "description": "Lists the available tags.",
+            "url": {
+              "raw": "{{baseUrl}}/tags.list?cursor=&limit=&mode=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "tags.list"
+              ],
+              "query": [
+                {
+                  "key": "cursor",
+                  "value": "",
+                  "description": "The cursor to resume iteration from. If not provided, then iteration starts from the beginning.\n"
+                },
+                {
+                  "key": "limit",
+                  "value": "",
+                  "description": "The maximum number of tags to return. The default is '50'."
+                },
+                {
+                  "key": "mode",
+                  "value": "",
+                  "description": "The iteration mode to use, otherwise if not set, then \"after\" is\nused.\n"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "update",
+          "request": {
+            "description": "Updates a tag's information.",
+            "url": {
+              "raw": "{{baseUrl}}/tags.update",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "tags.update"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"allowed_values\": {\n        \"set\": [\n            \"example\"\n        ]\n    },\n    \"description\": \"example\",\n    \"id\": \"example\",\n    \"name\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Timeline Entries",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "description": "Creates a new entry on an object's timeline.",
+            "url": {
+              "raw": "{{baseUrl}}/timeline-entries.create",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "timeline-entries.create"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"object\": \"example\",\n    \"type\": \"timeline_comment\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "get",
+          "request": {
+            "description": "Gets an entry on an object's timeline.",
+            "url": {
+              "raw": "{{baseUrl}}/timeline-entries.get?id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "timeline-entries.get"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "",
+                  "description": "The ID of the timeline entry to get."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "list",
+          "request": {
+            "description": "Lists the timeline entries for an object.",
+            "url": {
+              "raw": "{{baseUrl}}/timeline-entries.list?object=&cursor=&limit=&mode=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "timeline-entries.list"
+              ],
+              "query": [
+                {
+                  "key": "object",
+                  "value": "",
+                  "description": "The ID of the object to list timeline entries for."
+                },
+                {
+                  "key": "cursor",
+                  "value": "",
+                  "description": "The cursor to resume iteration from. If not provided, then iteration starts from the beginning.\n"
+                },
+                {
+                  "key": "limit",
+                  "value": "",
+                  "description": "The maximum number of entries to return. If not set, then this\ndefaults to `50`.\n"
+                },
+                {
+                  "key": "mode",
+                  "value": "",
+                  "description": "The iteration mode to use, otherwise if not set, then \"after\" is\nused.\n"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "update",
+          "request": {
+            "description": "Updates an entry on an object's timeline.",
+            "url": {
+              "raw": "{{baseUrl}}/timeline-entries.update",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "timeline-entries.update"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"example\",\n    \"type\": \"timeline_comment\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Webhooks",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "description": "Creates a new webhook target.",
+            "url": {
+              "raw": "{{baseUrl}}/webhooks.create",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "webhooks.create"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"event_types\": [\n        \"part_created\"\n    ],\n    \"secret\": \"example\",\n    \"url\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "delete",
+          "request": {
+            "description": "Deletes the requested webhook.",
+            "url": {
+              "raw": "{{baseUrl}}/webhooks.delete",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "webhooks.delete"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "get",
+          "request": {
+            "description": "Gets the requested webhook's information.",
+            "url": {
+              "raw": "{{baseUrl}}/webhooks.get?id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "webhooks.get"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "",
+                  "description": "ID for the webhook."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "list",
+          "request": {
+            "description": "Lists the webhooks.",
+            "url": {
+              "raw": "{{baseUrl}}/webhooks.list",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "webhooks.list"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "update",
+          "request": {
+            "description": "Updates the requested webhook.",
+            "url": {
+              "raw": "{{baseUrl}}/webhooks.update",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "webhooks.update"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"action\": \"activate\",\n    \"event_types\": {\n        \"add\": [\n            \"part_created\"\n        ],\n        \"remove\": [\n            \"part_created\"\n        ],\n        \"set\": [\n            \"part_created\"\n        ]\n    },\n    \"id\": \"example\",\n    \"secret\": \"example\",\n    \"url\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    },
+    {
+      "name": "Works",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "description": "Creates new work ([issue](https://devrev.ai/docs/product/build),\n[ticket](https://devrev.ai/docs/product/support)) item.\n",
+            "url": {
+              "raw": "{{baseUrl}}/works.create",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "works.create"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"applies_to_part\": \"example\",\n    \"artifacts\": [\n        \"example\"\n    ],\n    \"body\": \"example\",\n    \"owned_by\": [\n        \"example\"\n    ],\n    \"reported_by\": [\n        \"example\"\n    ],\n    \"stage\": {\n        \"name\": \"example\"\n    },\n    \"tags\": [\n        {\n            \"id\": \"example\",\n            \"value\": \"example\"\n        }\n    ],\n    \"target_close_date\": \"example\",\n    \"title\": \"example\",\n    \"type\": \"issue\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "delete",
+          "request": {
+            "description": "Deletes a work item.",
+            "url": {
+              "raw": "{{baseUrl}}/works.delete",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "works.delete"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "export",
+          "request": {
+            "description": "Exports a collection of work items.",
+            "url": {
+              "raw": "{{baseUrl}}/works.export?first=&target_close_date.after=&target_close_date.before=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "works.export"
+              ],
+              "query": [
+                {
+                  "key": "first",
+                  "value": "",
+                  "description": "The number of work items to return. The default is '50', the maximum is '5000'.\n"
+                },
+                {
+                  "key": "target_close_date.after",
+                  "value": "",
+                  "description": "Filters for objects created after the provided timestamp (inclusive).\n"
+                },
+                {
+                  "key": "target_close_date.before",
+                  "value": "",
+                  "description": "Filters for objects created before the provided timestamp\n(inclusive).\n"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "get",
+          "request": {
+            "description": "Gets a work item's information.",
+            "url": {
+              "raw": "{{baseUrl}}/works.get?id=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "works.get"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "",
+                  "description": "The work's ID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "list",
+          "request": {
+            "description": "Lists a collection of work items.",
+            "url": {
+              "raw": "{{baseUrl}}/works.list?cursor=&limit=&mode=&target_close_date.after=&target_close_date.before=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "works.list"
+              ],
+              "query": [
+                {
+                  "key": "cursor",
+                  "value": "",
+                  "description": "The cursor to resume iteration from. If not provided, then iteration starts from the beginning.\n"
+                },
+                {
+                  "key": "limit",
+                  "value": "",
+                  "description": "The maximum number of works to return. The default is '50'.\n"
+                },
+                {
+                  "key": "mode",
+                  "value": "",
+                  "description": "The iteration mode to use, otherwise if not set, then \"after\" is\nused.\n"
+                },
+                {
+                  "key": "target_close_date.after",
+                  "value": "",
+                  "description": "Filters for objects created after the provided timestamp (inclusive).\n"
+                },
+                {
+                  "key": "target_close_date.before",
+                  "value": "",
+                  "description": "Filters for objects created before the provided timestamp\n(inclusive).\n"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "_type": "endpoint"
+        },
+        {
+          "name": "update",
+          "request": {
+            "description": "Updates a work item's information.",
+            "url": {
+              "raw": "{{baseUrl}}/works.update",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "works.update"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{authorization}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"applies_to_part\": \"example\",\n    \"artifacts\": {\n        \"set\": [\n            \"example\"\n        ]\n    },\n    \"body\": \"example\",\n    \"custom_schema_fragments\": [\n        \"example\"\n    ],\n    \"id\": \"example\",\n    \"owned_by\": {\n        \"set\": [\n            \"example\"\n        ]\n    },\n    \"reported_by\": {\n        \"set\": [\n            \"example\"\n        ]\n    },\n    \"stage\": {\n        \"name\": \"example\"\n    },\n    \"tags\": {\n        \"set\": [\n            {\n                \"id\": \"example\",\n                \"value\": \"example\"\n            }\n        ]\n    },\n    \"target_close_date\": \"example\",\n    \"title\": \"example\",\n    \"type\": \"issue\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "_type": "endpoint"
+        }
+      ],
+      "_type": "container"
+    }
+  ]
+}
