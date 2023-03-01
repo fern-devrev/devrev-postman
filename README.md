@@ -1,8 +1,8 @@
-# {Company} Postman Collection
+# DevRev Postman Collection
 
-This repository contains a [Postman Collection](/collection.json) for the [{company} API](docs_url).
+This repository contains a [Postman Collection](/collection.json) for the [DevRev API](https://devrev.ai/docs/apis/methods#/).
 
-[![Open in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/fern-api/workspace/fern-{company})
+[![Open in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/fern-api/workspace/devrev/overview)
 
 ## What is a Postman Collection?
 
