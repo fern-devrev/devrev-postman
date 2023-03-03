@@ -1574,7 +1574,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"applies_to_part\": \"example\",\n    \"artifacts\": [\n        \"example\"\n    ],\n    \"body\": \"example\",\n    \"owned_by\": [\n        \"example\"\n    ],\n    \"reported_by\": [\n        \"example\"\n    ],\n    \"stage\": {\n        \"name\": \"example\"\n    },\n    \"tags\": [\n        {\n            \"id\": \"example\",\n            \"value\": \"example\"\n        }\n    ],\n    \"target_close_date\": \"example\",\n    \"title\": \"example\",\n    \"type\": \"issue\"\n}",
+              "raw": "{\n    \"type\": \"issue\",\n    \"priority\": \"p0\",\n    \"applies_to_part\": \"example\",\n    \"artifacts\": [\n        \"example\"\n    ],\n    \"body\": \"example\",\n    \"owned_by\": [\n        \"example\"\n    ],\n    \"reported_by\": [\n        \"example\"\n    ],\n    \"stage\": {\n        \"name\": \"example\"\n    },\n    \"tags\": [\n        {\n            \"id\": \"example\",\n            \"value\": \"example\"\n        }\n    ],\n    \"target_close_date\": \"example\",\n    \"title\": \"example\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
